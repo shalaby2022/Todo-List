@@ -5,7 +5,7 @@
             <p>{{task.day}}</p>
         </div>
         <button @click="$emit('DeleteTask', task.id)" class="delete">❌</button>
-        <button @click="$emit('toggle', task.id)" class="delete">💲</button>
+        <button @click="$emit('toggle', task.id)" class="remind">🧭</button>
 
     </div>
 </template>
@@ -29,14 +29,25 @@ export default {
         justify-content: space-around;
     }
     .task.reminder {
-        border-left: 10px solid green;
+        border-left: 10px solid rgb(9, 52, 179);
     }
     .delete {
         display: inline-block;
         padding: 0.1rem 1.5rem;
         background-color: royalblue;
         border: none;
+        border-radius: 5px;
         cursor: pointer;
+        font-size: 1.4rem;
+    }
+    .remind {
+        display: inline-block;
+        padding: 0.1rem 1.5rem;
+        background-color: royalblue;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.4rem;
     }
     .delete:hover {
         background-color: blue;
